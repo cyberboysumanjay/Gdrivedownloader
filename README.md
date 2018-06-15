@@ -3,13 +3,13 @@ Google Drive Uploader
 
 Simple script to upload files on Google Drive through Direct URL and gives the direct drive download link.
 
-# Description:
+# Description
 Script uses predefined Drive APIs Client ID and Client Secret
 
 It takes upload file as command line argument, uploads it and sets permissions that anyone who has download link can download the file.  
 After file has been uploaded the script prints direct download url.
 
-# Requirements:
+# Requirements
   * Python >= 2.6 [Tested on Python 3.5]
   * [google-api-python-client](http://code.google.com/p/google-api-python-client/)
   * python-httplib2
@@ -42,5 +42,5 @@ After file has been uploaded the script prints direct download url.
   Performing local cleanup.........
   Everything done... Exiting!
 
-# Credits:
+# Credits
 ### kshcherban for his lovely work [here](https://github.com/kshcherban/gdrive_uploader)
