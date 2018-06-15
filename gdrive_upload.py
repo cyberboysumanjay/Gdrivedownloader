@@ -1,21 +1,16 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# author: k.scherban@gmail.com
-# license: GPL v.2 or higher
-
 import sys
 import logging
 import httplib2
+import urllib.request
 from mimetypes import guess_type
-
-# Following libraries can be installed by executing:
-# sudo pip install --upgrade google-api-python-client
+import downloader
+# Following libraries can be installed by executing: sudo -H pip3 install --upgrade google-api-python-client
 from apiclient.discovery import build
 from apiclient.http import MediaFileUpload
 from apiclient.errors import ResumableUploadError
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
-
+from oauth2client import file, client, tools
 
 # Log only oauth2client errors
 logging.basicConfig(level="ERROR")
@@ -99,13 +94,7 @@ def upload_file(file_path, file_name, mime_type):
     return download_url
 
 if __name__ == '__main__':
-# Check if file provied as argument and exists
-    if len(sys.argv) != 2:
-        print("One file should be provided as argument")
-        sys.exit(1)
-    else:
-# Path to the file to upload
-        file_path = sys.argv[1]
+    file_path=downloader.get_filename()
     try:
         with open(file_path) as f: pass
     except IOError as e:
@@ -126,3 +115,5 @@ if __name__ == '__main__':
         print("Error occured while first upload try:", e)
         print("Trying one more time.")
         print(upload_file(file_path, file_name, mime_type))
+    finally:
+        downloader.local_delete(file_path)

@@ -1,2 +1,8 @@
 httplib2
 google-api-python-client
+urllib
+sys
+logging
+mimetypes
+apiclient
+oauth2client
