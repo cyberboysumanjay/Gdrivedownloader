@@ -1,6 +1,7 @@
 import urllib.request
 import os
 import sys
+import subprocess
 
 def get_filename():
     print("Enter the Direct URL of the file you want to download: ")
@@ -15,7 +16,12 @@ def local_download(url,filename):
     pathname = os.path.dirname(sys.argv[0])
     path=str(os.path.abspath(pathname))+"/"
     try:
-        urllib.request.urlretrieve(url, path+str(filename))
+        command=[]
+        command.append('wget')
+        command.append(url)
+        subprocess.call(command)
+        print()
+        #urllib.request.urlretrieve(url, path+str(filename))
     except Exception as e:
         print("Error! Can't proceed further.")
         print("Sorry!")
@@ -28,4 +34,4 @@ def local_download(url,filename):
 def local_delete(filename):
     print('Performing local cleanup.........')
     os.remove(filename)
-    print('Everything done... Exiting!')
+    print('Everything done... \nExiting!')
