@@ -31,16 +31,25 @@ After file has been uploaded the script prints direct download url.
 
 
   > cyberboy@MonsterMachine:~/python/gdrive/Gdrivedownloader$ ./start.sh
-  Enter the Direct URL of the file you want to download:
-  https://cyberboysumanjay.github.io/img/jetpacktocat.jpg
-  Beginning file download...
-  This may take time depending upon the file size.
-  Please be patient
-  jetpacktocat.jpg is successfully downloaded locally
-  Starting Google Drive upload.....
-  https://drive.google.com/a/nitdelhi.ac.in/uc?id=1y64hPnzIt_9eYpID5hYL8yg9MPUQKYfc&export=download
-  Performing local cleanup.........
-  Everything done... Exiting!
+  
+  >Enter the Direct URL of the file you want to download:
+  
+  >https://cyberboysumanjay.github.io/img/jetpacktocat.jpg
+  
+  >Beginning file download...
+  
+  >This may take time depending upon the file size.
+  
+  >Please be patient
+  >jetpacktocat.jpg is successfully downloaded locally
+  
+  >Starting Google Drive upload.....
+  
+  >https://drive.google.com/a/nitdelhi.ac.in/uc?id=1y64hPnzIt_9eYpID5hYL8yg9MPUQKYfc&export=download
+  
+  >Performing local cleanup.........
+  
+  >Everything done... Exiting!
 
 # Credits
 ### kshcherban for his lovely work [here](https://github.com/kshcherban/gdrive_uploader)
