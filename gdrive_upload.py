@@ -19,6 +19,7 @@ logging.basicConfig(level="ERROR")
 token_file = sys.path[0] + '/auth_token.txt'
 
 # Copy your credentials from the APIs Console
+#Please don't abuse these credentials
 CLIENT_ID = '466641482782-fleutfims8sr6rv3296l2hiefavnl7i0.apps.googleusercontent.com'
 CLIENT_SECRET = 'nNKJC_zi-x0T7wVFpO5-Q_68'
 # Check https://developers.google.com/drive/scopes for all available scopes
@@ -94,7 +95,7 @@ def upload_file(file_path, file_name, mime_type):
     return download_url
 
 if __name__ == '__main__':
-    file_path=downloader.get_filename()
+    file_path=downloader.start()
     try:
         with open(file_path) as f: pass
     except IOError as e:
@@ -110,10 +111,10 @@ if __name__ == '__main__':
     file_name, mime_type = file_ops(file_path)
 # Sometimes API fails to retrieve starting URI, we wrap it.
     try:
-        print(upload_file(file_path, file_name, mime_type))
+        print("Here is your Google Drive link: "+upload_file(file_path, file_name, mime_type))
     except ResumableUploadError as e:
         print("Error occured while first upload try:", e)
         print("Trying one more time.")
-        print(upload_file(file_path, file_name, mime_type))
+        print("Here is your Google Drive link: "+upload_file(file_path, file_name, mime_type))
     finally:
         downloader.local_delete(file_path)
