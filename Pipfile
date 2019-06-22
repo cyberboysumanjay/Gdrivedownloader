@@ -14,7 +14,7 @@ google-auth = "==1.5.0"
 more-itertools = "==4.2.0"
 ndg-httpsclient = "==0.4.0"
 oauth = "==1.0.1"
-"urllib3" = "==1.23"
+"urllib3" = "==1.24.2"
 virtualenv = "==15.0.1"
 
 [requires]
